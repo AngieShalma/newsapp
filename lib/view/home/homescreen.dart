@@ -4,6 +4,7 @@ import 'package:untitled5/view/buisness/business.dart';
 import 'package:untitled5/view/science/science.dart';
 import 'package:untitled5/view/sports/sports.dart';
 import '../../provider/navProvider.dart';
+import '../search/search.dart';
 class homescreen extends StatelessWidget {
   const homescreen({Key? key}) : super(key: key);
 
@@ -17,7 +18,11 @@ class homescreen extends StatelessWidget {
               foregroundColor: Colors.white,
               title: Text('News App'),
               actions: [
-                IconButton(icon:Icon(Icons.search), onPressed: (){},),
+                IconButton(icon:Icon(Icons.search), onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder:(context){
+                    return searchscreen();
+                  }));
+                },),
                 IconButton(icon:Icon(Icons.lightbulb), onPressed: (){},),
               ],
               bottom: TabBar(
